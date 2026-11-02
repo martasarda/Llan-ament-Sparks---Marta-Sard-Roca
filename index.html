@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sparks</title>
+    <meta
+      name="description"
+      content="Sparks: una web fan sobre la cançó de Coldplay."
+    />
+    <meta name="theme-color" content="#f9f9f9" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <!--
+  COORDENADES DEL DISSENY
+  Cada element posicionat porta les seves mides en "píxels de disseny" (Figma, 1512 px d'ample)
+  a l'atribut style: --x, --y, --w, --h. El CSS les escala segons l'ample de la pantalla (--u).
+-->
+  <body>
+    <div class="page" id="top">
+      <!-- HERO -->
+      <section class="hero" id="hero" aria-label="Portada" style="--h: 982">
+        <img
+          class="abs hero__img"
+          style="--x: 40; --y: 49; --w: 236; --h: 370; --d: 0.05s"
+          src="images/light-flare.webp"
+          width="1200"
+          height="1500"
+          fetchpriority="high"
+        />
+        <img
+          class="abs hero__img"
+          style="--x: 127; --y: 180; --w: 247; --h: 289; --d: 0.15s"
+          src="images/jonny-walk-bw.webp"
+          width="1200"
+          height="1500"
+        />
+        <img
+          class="abs hero__img"
+          style="--x: 54; --y: 729; --w: 342; --h: 196; --d: 0.25s"
+          src="images/jonny-orange-confetti.webp"
+          width="1200"
+          height="1500"
+        />
+        <img
+          class="abs hero__img"
+          style="
+            --x: 1088;
+            --y: 49;
+            --w: 364;
+            --h: 237;
+            --d: 0.1s;
+            object-position: 50% 62%;
+          "
+          src="images/light-beam.webp"
+          width="1500"
+          height="1500"
+        />
+        <img
+          class="abs hero__img"
+          style="--x: 1108; --y: 683; --w: 323; --h: 242; --d: 0.3s"
+          src="images/fans-mumbai.webp"
+          width="2249"
+          height="1500"
+        />
+        <img
+          class="abs hero__img"
+          style="--x: 1029; --y: 526; --w: 241; --h: 301; --d: 0.2s"
+          src="images/tattoo-bw.webp"
+          width="1200"
+          height="1500"
+        />
+
+        <!-- Frase cançó -->
+        <img
+          class="abs hero__line"
+          style="--x: 547.4; --y: 28.4; --w: 361.3; --h: 359"
+          src="images/txt-hero-line.webp"
+          width="723"
+          height="718"
+        />
+
+        <!-- Títol "Sparks"(lletra amb textura de foc) -->
+        <h1
+          class="abs hero__title"
+          style="--x: 276; --y: 273; --w: 959; --h: 436"
+        >
+          <img src="images/hero-sparks.png" width="959" height="436" />
+        </h1>
+      </section>
+
+      <!-- TOT EL QUE VE DESPRÉS DEL HERO -->
+      <div class="after-hero">
+        <!-- Topbar: apareix en acabar el hero i es queda fixa a dalt -->
+        <header class="topbar" id="topbar">
+          <svg
+            class="topbar__bg"
+            viewBox="0 0 1512 98"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <linearGradient id="sparksGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#7a2e0e" />
+                <stop offset="1" stop-color="#d0651a" />
+              </linearGradient>
+              <!-- La topbar "Sparks" amb fons de tipo transparent -->
+              <mask
+                id="sparksKnockout"
+                maskUnits="userSpaceOnUse"
+                x="-4000"
+                y="0"
+                width="9512"
+                height="98"
+              >
+                <rect x="-4000" y="0" width="9512" height="98" fill="#fff" />
+                <text
+                  class="topbar__word"
+                  x="756"
+                  y="50"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  textLength="142"
+                  lengthAdjust="spacingAndGlyphs"
+                  fill="#000"
+                >
+                  Sparks
+                </text>
+              </mask>
+            </defs>
+            <rect
+              class="topbar__plate"
+              x="-4000"
+              y="0"
+              width="9512"
+              height="98"
+              mask="url(#sparksKnockout)"
+            />
+            <text
+              class="topbar__word topbar__tint"
+              x="756"
+              y="50"
+              text-anchor="middle"
+              dominant-baseline="central"
+              textLength="142"
+              lengthAdjust="spacingAndGlyphs"
+              fill="url(#sparksGrad)"
+            >
+              Sparks
+            </text>
+          </svg>
+
+          <a
+            class="topbar__brand"
+            href="#top"
+            aria-label="Sparks, tornar a dalt"
+          ></a>
+          <a
+            class="abs topbar__link"
+            style="--x: 36.1; --y: 25.9; --w: 103.4; --h: 48.1"
+            href="#who"
+          >
+            <img
+              src="images/txt-about.webp"
+              alt="About"
+              width="207"
+              height="96"
+            />
+          </a>
+          <button
+            class="abs topbar__link topbar__menu"
+            style="--x: 1383.9; --y: 21; --w: 71; --h: 58.5"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="menu"
+            aria-expanded="false"
+            data-menu-open
+          >
+            <img
+              src="images/txt-menu.webp"
+              alt="Menu"
+              width="142"
+              height="117"
+            />
+          </button>
+        </header>
+
+        <!-- SONG & LYRICS -->
+        <section
+          class="sec sec--song"
+          id="song"
+          style="--h: 2333"
+          aria-label="Cançó i lletra"
+        >
+          <div
+            class="abs player"
+            style="--x: 178; --y: 184; --w: 1156; --h: 650.25"
+            role="region"
+            aria-label="Reproductor de la cançó"
+          >
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/Ar48yzjn1PE?rel=0&amp;modestbranding=1&amp;playsinline=1"
+              title="Sparks, vídeo de la cançó"
+              loading="lazy"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div
+            class="abs lyrics"
+            id="lyrics"
+            style="--x: 476; --y: 941; --w: 560; --h: 1214"
+          >
+            <img
+              src="images/lyrics.png"
+              alt="Song lyrics"
+              width="560"
+              height="1214"
+              data-optional
+            />
+            <p class="lyrics__missing">
+              Falta la imatge de la lletra:<br /><code>images/lyrics.png</code>
+            </p>
+          </div>
+
+          <div
+            class="abs credits"
+            id="creators"
+            style="--x: 178; --y: 2241; --w: 1156; --h: 92"
+          >
+            <div class="credits__col">
+              <p>
+                Written by Guy Berryman, Jonny Buckland, Will Champion and Chris
+                Martin
+              </p>
+              <p>Composed and produced by Ken Nelson &amp; Coldplay</p>
+              <p>DOP by Ken Nelson &amp; Coldplay</p>
+            </div>
+            <div class="credits__col credits__col--right">
+              <p>
+                Featuring &amp; Assisted by Michael H. Brauer &amp; George
+                Marino
+              </p>
+              <p>
+                Assisted by Andrea Wright, Jon Coles, Paul Read, Simon Barnicott
+                &amp; Mark Phythian
+              </p>
+              <p>Produced by Parlophone Records &amp; Capitol Records</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ WHO WE ARE ============ -->
+        <section
+          class="sec sec--who"
+          id="who"
+          style="--h: 3197; --gap: 78"
+          aria-label="Qui som"
+        >
+          <div class="abs strip" style="--x: 0; --y: 98; --w: 1512; --h: 167">
+            <img
+              src="images/fans-mumbai.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="abs strip" style="--x: 0; --y: 265; --w: 1512; --h: 167">
+            <img
+              src="images/rome-fireworks.webp"
+              loading="lazy"
+              decoding="async"
+              style="object-position: 50% 26%"
+            />
+          </div>
+          <div class="abs strip" style="--x: 0; --y: 432; --w: 1512; --h: 167">
+            <img
+              src="images/rain-brazil.webp"
+              loading="lazy"
+              decoding="async"
+              style="object-position: 50% 79%"
+            />
+          </div>
+
+          <div
+            class="abs who__photo"
+            style="--x: -34; --y: 667; --w: 407; --h: 608"
+          >
+            <img
+              src="images/balloons-tall.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div
+            class="abs who__photo"
+            style="--x: 121; --y: 1019; --w: 350; --h: 367"
+          >
+            <img src="images/band-hug.webp" loading="lazy" decoding="async" />
+          </div>
+
+          <h2
+            class="abs who__title"
+            style="--x: 396.1; --y: 664.4; --w: 642.3; --h: 862"
+          >
+            <img
+              src="images/txt-who-we-are.webp"
+              alt="Who we are"
+              loading="lazy"
+              decoding="async"
+              width="1285"
+              height="1724"
+            />
+          </h2>
+
+          <div class="abs who__text" style="--x: 374; --y: 1672; --w: 764">
+            <p>
+              In the universe of contemporary music, delicacy has space of its
+              own. <em>Coldplay</em>, born in the late 90s out of a need to
+              translate vulnerability into sound, found their purest essence
+              long before stadium lights and neon visual took over.
+            </p>
+            <p>
+              In <em>Sparks</em>, featured on their debut album
+              <em>Parachutes</em> (2000), the band builds an acoustic sanctuary
+              where simplicity becomes an act of emotional resistance. Guided by
+              a gentle bassline, soft guitar chords, and Chris Martin’s intimate
+              vocal delivery, the track suspends time to speak of regret,
+              redemption, and the quiet promise never to let down the ones we
+              love.
+            </p>
+            <p>
+              It is a sonic reminder that when the world gets too loud, it is
+              the smallest sparks that keep the light alive.
+            </p>
+          </div>
+
+          <div
+            class="abs who__photo who__group"
+            style="--x: 276; --y: 2601; --w: 960; --h: 596"
+          >
+            <img
+              src="images/press-athens.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        <!-- MEET US -->
+        <section
+          class="sec sec--meet"
+          id="meet"
+          style="--h: 1130; --gap: 78"
+          aria-label="Trobem-nos"
+        >
+          <a
+            class="abs meet__title"
+            id="meet-us"
+            style="--x: 323.1; --y: 196.1; --w: 871.4; --h: 380.7"
+            href="#meet-us"
+          >
+            <img
+              src="images/txt-meet-us.webp"
+              alt="Meet us"
+              loading="lazy"
+              decoding="async"
+              width="1743"
+              height="761"
+            />
+          </a>
+          <a
+            class="abs meet__link"
+            id="events"
+            style="--x: 356.8; --y: 509.8; --w: 704.1; --h: 298"
+            href="#events"
+          >
+            <img
+              src="images/txt-events.webp"
+              alt="Events"
+              loading="lazy"
+              decoding="async"
+              width="1408"
+              height="596"
+            />
+          </a>
+          <a
+            class="abs meet__link"
+            id="submit"
+            style="--x: 327.6; --y: 820.3; --w: 836.9; --h: 295.6"
+            href="#submit"
+          >
+            <img
+              src="images/txt-submit.webp"
+              alt="Submit"
+              loading="lazy"
+              decoding="async"
+              width="1674"
+              height="591"
+            />
+          </a>
+        </section>
+
+        <!-- LIVE SPARKS -->
+        <section
+          class="sec sec--live live"
+          id="live"
+          style="--h: 3066; --gap: 88"
+          aria-label="Live Sparks, fotos de concerts"
+        >
+          <!-- data-depth = intensitat del parallax; data-rot = inclinació en repòs (graus) -->
+          <figure
+            class="abs live__item"
+            style="--x: 1040; --y: 146; --w: 421; --h: 281"
+            data-depth="-0.06"
+            data-rot="1.2"
+          >
+            <img
+              src="images/believe-in-love.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 570; --y: 218; --w: 412; --h: 275"
+            data-depth="0.08"
+            data-rot="-1.4"
+          >
+            <img src="images/bts-laugh.webp" loading="lazy" decoding="async" />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 746; --y: 339; --w: 665; --h: 444"
+            data-depth="0.05"
+            data-rot="0.6"
+          >
+            <img src="images/kiss-stage.webp" loading="lazy" decoding="async" />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: -30; --y: 146; --w: 482; --h: 603"
+            data-depth="0.14"
+            data-rot="-0.8"
+          >
+            <img src="images/tattoo-bw.webp" loading="lazy" decoding="async" />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: -331; --y: 561; --w: 901; --h: 736"
+            data-depth="0.1"
+            data-rot="0.5"
+          >
+            <img
+              src="images/light-flare-arc.webp"
+              loading="lazy"
+              decoding="async"
+              style="object-position: 0% 50%"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 962; --y: 1019; --w: 482; --h: 341"
+            data-depth="-0.1"
+            data-rot="1.1"
+          >
+            <img
+              src="images/piano-hands.webp"
+              loading="lazy"
+              decoding="async"
+              style="object-position: 100% 50%"
+            />
+          </figure>
+
+          <h2
+            class="abs live__title"
+            style="--x: 374; --y: 839; --w: 764; --h: 180"
+          >
+            <img
+              src="images/live-sparks.png"
+              alt="Live Sparks"
+              width="764"
+              height="180"
+            />
+          </h2>
+          <a
+            class="abs live__more"
+            style="--x: 647.3; --y: 1051; --w: 219.7; --h: 51.1"
+            href="#meet"
+            ><img
+              src="images/txt-know-more.webp"
+              alt="Know more +"
+              loading="lazy"
+              decoding="async"
+              width="439"
+              height="102"
+          /></a>
+
+          <figure
+            class="abs live__item"
+            style="--x: 55; --y: 1353; --w: 721; --h: 481"
+            data-depth="0.07"
+            data-rot="-0.7"
+          >
+            <img
+              src="images/sky-full-of-stars.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 869; --y: 1416; --w: 575; --h: 718"
+            data-depth="-0.08"
+            data-rot="0.9"
+          >
+            <img
+              src="images/jonny-rainbow.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 120; --y: 1878; --w: 859; --h: 573"
+            data-depth="0.12"
+            data-rot="0.4"
+          >
+            <img src="images/silhouette.webp" loading="lazy" decoding="async" />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 55; --y: 2415; --w: 519; --h: 649"
+            data-depth="-0.05"
+            data-rot="-1.1"
+          >
+            <img
+              src="images/jonny-orange-confetti.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 1079; --y: 2189; --w: 433; --h: 523"
+            data-depth="0.09"
+            data-rot="1.3"
+          >
+            <img
+              src="images/band-streamers.webp"
+              loading="lazy"
+              decoding="async"
+              style="object-position: 60% 50%"
+            />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 612; --y: 2507; --w: 428; --h: 285"
+            data-depth="-0.12"
+            data-rot="-0.6"
+          >
+            <img src="images/drums-rain.webp" loading="lazy" decoding="async" />
+          </figure>
+          <figure
+            class="abs live__item"
+            style="--x: 929; --y: 2740; --w: 515; --h: 326"
+            data-depth="0.06"
+            data-rot="0.8"
+          >
+            <img
+              src="images/balloons-stage.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <p
+            class="abs live__credit"
+            style="--x: 630.7; --y: 2853; --w: 247.8; --h: 159.4"
+          >
+            <img
+              src="images/txt-photos-by.webp"
+              alt="Photos by Anna Lee"
+              loading="lazy"
+              decoding="async"
+              width="496"
+              height="319"
+            />
+          </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="sec sec--footer" id="footer" style="--h: 287; --gap: 88">
+          <img
+            class="abs footer__logo"
+            style="--x: 38; --y: 83; --w: 298; --h: 185"
+            src="images/footer-sparks.png"
+            alt="Sparks, with love Coldplay"
+            loading="lazy"
+            decoding="async"
+            width="298"
+            height="185"
+          />
+          <a
+            class="abs sticker"
+            style="
+              --x: 874;
+              --y: 14;
+              --w: 254.9;
+              --h: 257.5;
+              --iw: 224;
+              --ih: 226;
+            "
+            href="https://open.spotify.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="images/sticker-spotify.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a
+            class="abs sticker"
+            style="
+              --x: 1051;
+              --y: 0;
+              --w: 316.6;
+              --h: 286.8;
+              --iw: 274;
+              --ih: 248;
+            "
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="images/sticker-instagram.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a
+            class="abs sticker"
+            style="
+              --x: 1228;
+              --y: 0;
+              --w: 310;
+              --h: 232.3;
+              --iw: 260;
+              --ih: 195;
+            "
+            href="mailto:elteu@correu.com"
+          >
+            <img
+              src="images/sticker-email.webp"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <!-- MENÚ  -->
+    <div
+      class="menu"
+      id="menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menú"
+      hidden
+    >
+      <div class="menu__stage">
+        <button
+          class="abs menu__back"
+          style="--x: 25.7; --y: 23.1; --w: 125.6; --h: 64.2"
+          type="button"
+          data-menu-close
+        >
+          <img
+            src="images/txt-back.webp"
+            alt="Back?"
+            width="251"
+            height="128"
+          />
+        </button>
+        <a
+          class="abs menu__item"
+          style="--x: 538.2; --y: 98.1; --w: 434.5; --h: 175.6"
+          href="#lyrics"
+          data-menu-close
+          ><img
+            src="images/txt-lyrics.webp"
+            alt="Lyrics"
+            width="869"
+            height="351"
+        /></a>
+        <a
+          class="abs menu__item"
+          style="--x: 541.8; --y: 263.7; --w: 426.6; --h: 221.4"
+          href="#song"
+          data-menu-close
+          ><img
+            src="images/txt-listen.webp"
+            alt="Listen"
+            width="853"
+            height="443"
+        /></a>
+        <a
+          class="abs menu__item"
+          style="--x: 522.3; --y: 476.7; --w: 469.3; --h: 176.6"
+          href="#creators"
+          data-menu-close
+          ><img
+            src="images/txt-creator.webp"
+            alt="Creator"
+            width="939"
+            height="353"
+        /></a>
+        <a
+          class="abs menu__item"
+          style="--x: 537.8; --y: 658; --w: 426.1; --h: 219.5"
+          href="#meet"
+          data-menu-close
+          ><img
+            src="images/txt-other.webp"
+            alt="Other"
+            width="852"
+            height="439"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
